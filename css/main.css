@@ -11,7 +11,7 @@
    ========================================================================== */
 
 html {
-    color: #222;
+    color: dimgrey;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -97,8 +97,9 @@ textarea {
 
 
 html {
-  background-color: #fff;
+  background-color: thistle;
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -110,33 +111,62 @@ body {
 }
 
 .wrapper {
-  /*add display:flex and set justify-content to space-between*/
   font-weight: 700;
-  display:flex;
-  flex-flow: row wrap;
-  justify-content:space-around;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 0 10px;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  max-width: 1200px;
+}
+
+header,
+footer,
+main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+header,
+main {
+  border: 5px solid steelblue;
+}
+
+h1 {
+  text-align: left;
+  margin: .67em;
+}
+
+main {
+  margin: 1.25em 0;
+  padding: .67em;
 }
 
 .div-1, .div-2, .div-3 {
-  /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
   color: steelblue;
   line-height: 1.5em;
   font-size: 1em;
-  height: 300px;
+  height: auto;
   width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: shrink;
 }
 
 .div-2 {
   border-right: 2px solid steelblue;
   border-left: 2px solid steelblue;
-  padding:30px;
+  padding: 1em;
 }
 
+footer {
+  justify-content: center;
+  align-items: center;
+  border: 5px solid steelblue;
+  margin-top: 1em;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================= */
@@ -216,6 +246,19 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+@media (max-width: 760px) {
+	.wrapper {
+		display:flex;
+		flex-direction: column;
+	}
+	.div-1, .div-2, .div-3 {
+		width: 100%;
+		border: none;
+	}
+}
+
+
+
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
